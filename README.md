@@ -19,7 +19,7 @@ Aaru SonaliChat is an AI-powered Telegram bot designed to enhance user interacti
 Click the button below to deploy SonaliChat on Heroku.
 If You show any error like failed to app Creation Then fork and deploy
 
-<a href="https://dashboard.heroku.com/new?template=https://github.com/TEAMPURVI/SONALI_CHAT">
+<a href="https://dashboard.heroku.com/new?template=https://github.com/Careless-02/Sonali-Chat">
 <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-008080?style=for-the-badge&logo=heroku" width="200"/>
 </a>
 
@@ -48,7 +48,7 @@ FSUB=false                        # Enable forced subscription (true/false)
 
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/TEAMPURVI/SONALI_CHAT.git
+   git clone https://github.com/Careless-02/Sonali-Chat.git
    cd SONALI_CHAT
    ```
 
