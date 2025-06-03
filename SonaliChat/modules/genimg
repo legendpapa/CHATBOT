@@ -1,0 +1,48 @@
+from pyrogram import Client, filters
+from pyrogram.types import Message
+import aiohttp
+from SonaliChat import app
+from config import BOT_USERNAME as B, OWNER_USERNAME as O
+
+@app.on_message(filters.command("genimg"))
+async def generate_image(client: Client, message: Message):
+    chat_id = message.chat.id
+    prompt = message.text.split(" ", 1)[1] if len(message.command) > 1 else None
+
+    if not prompt:
+        await message.reply_text("❌ Please provide a prompt.\n\n🧠 Usage: `/genimg <your prompt>`", parse_mode="markdown")
+        return
+
+    fetching = await message.reply_text("⏳ *ʜᴏʟᴅ ᴏɴ !! 𝖢ʀᴀғᴛɪɴɢ ʏᴏᴜʀ ᴀʀᴛɪsᴛɪᴄ ᴍᴀsᴛᴇʀᴘɪᴇᴄᴇ...* 🎨", parse_mode="markdown")
+
+    try:
+        url = f"https://death-image.ashlynn.workers.dev/?prompt={prompt}&image=1&dimensions=square&safety=true"
+
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url) as resp:
+                if resp.status != 200:
+                    raise Exception("Failed to fetch image from API.")
+                data = await resp.json()
+
+        images = data.get("images", [])
+        if not images:
+            await fetching.edit("❌ No images returned from the API.")
+            return
+
+        caption = f"""
+✨ **𝖡ᴇʜᴏʟᴅ 𝖸ᴏᴜʀ 𝖣ʀᴇᴀᴍᴇᴅ 𝖠ʀᴛᴡᴏʀᴋ !!** ✨  
+
+🌟 **𝖯ʀᴏᴍᴘᴛ**: {prompt}  
+🖌️ **𝖢ʀᴇᴀᴛᴇᴅ ʙʏ**: *ᴛʜᴇ ᴍᴀɢɪᴄ ᴏғ ᴘᴜʀᴠɪ ᴀɪ*  
+🔮 **𝖯ᴏᴡᴇʀᴇᴅ ʙʏ**: @{B}  
+❤️ **ϻᴀᴅᴇ ʙʏ**: @{O}  
+"""
+
+        for img_url in images:
+            await client.send_photo(chat_id, img_url, caption=caption, parse_mode="markdown")
+
+        await fetching.delete()
+
+    except Exception as e:
+        print(f"Error generating image: {e}")
+        await fetching.edit("❌ An error occurred while generating the image.")
