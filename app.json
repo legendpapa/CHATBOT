@@ -1,6 +1,6 @@
 {
-  "name": "Aaru SonaliChat",
-  "description": "Aaru SonaliChat is an AI-powered Telegram bot with smart responses, automation, and seamless integrations using Python, MongoDB, and Pyrogram.",
+  "name": "SonaliChat",
+  "description": "SonaliChat is an AI-powered Telegram bot with smart responses, automation, and seamless integrations using Python, MongoDB, and Pyrogram.",
   "logo": "https://graph.org/file/826485f2d7db6f09db8ed.jpg",
   "keywords": [
     "SonaliChat",
@@ -13,7 +13,7 @@
       "url": "heroku/python"
     }
   ],
-  "repository": "https://github.com/CodeSearchDev/AaruSonaliChat",
+  "repository": "https://github.com/Careless-02/Sonali-Chat",
   "env": {
     "API_ID": {
       "description": "Get this value from my.telegram.org/apps.",
