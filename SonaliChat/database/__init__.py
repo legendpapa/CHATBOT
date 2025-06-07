@@ -2,8 +2,8 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import config
 
 # Database connection
-SonaliChat = AsyncIOMotorClient(config.MONGO_URL)
-db = SonaliChat["SonaliChat"]  # Database
+ChatBot = AsyncIOMotorClient(config.MONGO_URL)
+db = ChatBot["ChatBot"]  # Database
 usersdb = db["users"]    # Users Collection
 chatsdb = db["chats"]    # Chats Collection
 
