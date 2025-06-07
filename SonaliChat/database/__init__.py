@@ -12,4 +12,3 @@ from .chats import *
 from .admin import *
 from .fsub import *
 from .sonali import *
-from .SonaliChat import *
