@@ -62,14 +62,12 @@ async def start(client, m: Message):
         await asyncio.sleep(0.5)
         await accha.delete()
 
-        # ✅ Ensure `START_IMG` and `START` variables exist
         await m.reply_photo(
         photo=random.choice(IMG),
         caption=START,
         reply_markup=InlineKeyboardMarkup(STBUTTON),
     )
 
-###** ###
 @app.on_message(filters.new_chat_members)
 async def on_new_chat_members(client: Client, message: Message):
     bot_id = (await client.get_me()).id
@@ -81,19 +79,16 @@ async def on_new_chat_members(client: Client, message: Message):
         chat_username = message.chat.username
         added_by = message.from_user.mention if message.from_user else "Unknown User"
 
-        # Try to get invite link
         try:
             invite_link = await client.export_chat_invite_link(chat_id)
         except Exception:
             invite_link = "https://t.me/purvi_support"
 
-        # DB में ग्रुप सेव करें
         await add_chat(chat_id, chat_title)
-
-        # Welcome message - small caps text, simple plain text (no markdown/html)
+        
         caption = (
             f"**✦ ʜᴇʟʟᴏ {added_by}**\n\n"
-            f"**➻ ɴᴏᴡ ᴛʏᴘᴇ /SonaliChat ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛ ʙᴏᴛ.**\n\n"
+            f"**➻ ɴᴏᴡ ᴛʏᴘᴇ /chatbot ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛ ʙᴏᴛ.**\n\n"
             f"**💌 ᴛʜᴀɴᴋꜱ ꜰᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ {chat_title}**"
         )
 
