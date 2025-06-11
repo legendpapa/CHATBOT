@@ -49,7 +49,7 @@ async def SonaliChat_pm(_, message: Message):
     await message.reply_text(reply or "❖ ᴄʜᴀᴛʙᴏᴛ ᴇʀʀᴏʀ. ᴄᴏɴᴛᴀᴄᴛ @Purvi_Updates.")
 
 # /SonaliChat COMMAND WITH BUTTONS
-@app.on_message(filters.command("SonaliChat") & filters.group & ~filters.bot)
+@app.on_message(filters.command("chatbot") & filters.group & ~filters.bot)
 @is_admins
 async def SonaliChat_toggle(_, message: Message):
     chat_id = message.chat.id
