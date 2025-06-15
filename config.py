@@ -12,15 +12,15 @@ MONGO_URL = getenv("MONGO_URL", None)
 AUTH_CHANNEL = int(getenv("AUTH_CHANNEL", None))
 FSUB = getenv("FSUB", False)
 OWNER_ID = int(getenv("OWNER_ID", None))
-OWNER = 8143754205
-LOGGER_ID = -1002043788670
+OWNER = 7650291301
+LOGGER_ID = -1002046320443
 BOT_NAME = os.environ.get("BOT_NAME","𝐒‌‌σ፝֠֩‌ηᴧℓɪ")
-BOT_USERNAME = os.environ.get("BOT_USERNAME", "SonaliSonaliChat")
-SUPPORT_GROUP = os.environ.get("SUPPORT_GROUP", "PURVI_SUPPORT")
-UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "PURVI_SUPPORT")
-STRING1 = getenv("STRING1", "BQFwyZ4AwJ6X5mwD_LkgSqBF8EJ_uQKrOajLzLwQTkha18A3VILhojoRp3vN8_Du9QatV69iiDlirF32k7Flcog56m0ZrWisLs4Aui8ZVSA5YeSLvcuaH-U4U-SIUQdHkFntq2c1ihil1RGKmg7OpkHSruF5tFft5EQtktlQ6yt1ykB8sZQyHwU8AVB6CvwhSAEZxdxiiCohR6k62Y39QAExjxeBUle-393ZQMx4wsqXJvWJJiRu4juRnBNCGl5IU8JAnJk_cdB7_yrGr0sSTxekZIL6FjOgbHcVShfnoeB3dhGImob9HmDBwLJddlM1kZIwUNhpBSH7-oFgOOXkbPd8TX8ijAAAAAHGs9-AAA")
+BOT_USERNAME = os.environ.get("BOT_USERNAME", "jassuchatbot")
+SUPPORT_GROUP = os.environ.get("SUPPORT_GROUP", "ZOYU_SUPPORT")
+UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "THE_INCRICIBLE")
+STRING1 = getenv("STRING1", "")
 
-OWNER_USERNAME = "PurviBots"
+OWNER_USERNAME = "legendmickey"
 
 
 STICKER = [
